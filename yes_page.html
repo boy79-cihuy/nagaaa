@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HABEDE</title>
+    <link rel="stylesheet" href="yes_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text">UNTUK CHEF <br> NAGA TERLUCU!!! </h1>
+
+        <div id="quiz-container">
+            <h2 class="quiz-title">🎯 Tebak-Tebakan!</h2>
+            <p id="question" class="quiz-question">Apa Slogannya Nagaaaaa?</p>
+
+            <input type="text" id="answer" class="quiz-input" placeholder="Tulis jawaban kamu di sini...">
+            <button class="quiz-button" onclick="checkAnswer()">🚀 Submit Jawaban</button>
+
+            <div id="result-container" class="quiz-result">
+                <p id="result"></p>
+                <video id="result-video" src="vnaga.mp4" alt="Benar!" controls style="display: none;"></video>
+                <br>
+                <img id="result-image1" src="1.jpg" alt="Benar!" style="display: none;" width="300"><br>
+                <img id="result-image2" src="2.jpg" alt="Benar!" style="display: none;" width="300"><br>
+                <img id="result-image3" src="3.jpg" alt="Benar!" style="display: none;" width="300"><br>
+                <img id="result-image4" src="4.jpg" alt="Benar!" style="display: none;" width="300"><br>
+
+
+                <div class="services">
+                    <div class="service-card">
+                        <h1 id="heading" style="display: none;">HBD NAGAA ROARRRRR🎉</h1>
+                        <p id="result-text" style="display: none;">
+                            Happy Birthday, Nagaaaa! 🎂<br><br>
+
+                            Semoga panjang umur dan tetap jadi manusia, soalnya jadi naga susah bikin KTP 😎<br><br>
+
+                            Semoga harimu manis, kayak es krim yang nggak pernah tumpah walau dunia lagi goyang✌️<br><br>
+
+                            Pokoknya sehat selalu, rezeki lancar, tugas nggak numpuk, dan semoga sinyal Wi-Fi selalu kuat di hatimu (biar hidup nggak buffering) 😜 <br><br>
+
+                            Semoga yang kamu sayang nggak bikin kamu sedih.Termasuk aku (kalau masih dihitung manusia) 😜<br><br>
+
+                            Kalau nanti kamu lagi capek, "ISTIRAHATTT"....istirahat itu penting, Kayak NASGOR tanpa dia, hidup jadi hambar. (dianya krupuk)<br><br>
+                            
+                            Oiya selamat bikin ktp dan sim semoga fotonya waras, gak kayak alboy & jody yg kek titisan pejuang wanpiss yg habis nonton maraton 24 jam nonstop <br><br>
+
+
+
+                            🎂 Dari aku, yang absurd tapi tulus ciahhh.
+                            (Absurd-nya 11:12 sama kucing yang ngejar bayangannya sendiri)
+                        </p>
+                    </div>
+                </div>
+            </div>
+<br>
+            <div class="audio-container" id="audio-container" style="display: none;">
+                <h2>🎧 dewa</h2>
+                <audio id="audio" controls>
+                    <source src="dewa.mp3" type="audio/mpeg">
+                    Browser kamu tidak mendukung pemutar audio.
+                </audio>
+                <br>
+                <button id="replay-audio" style="display: none;">🔁 Putar Ulang</button>
+            </div>
+
+            <!-- Tambahan suara ROAR -->
+            <audio id="roar-sound" src="roar.mp3" preload="auto"></audio>
+
+            <div class="buttons">
+                <button class="Kembali-btn" onclick="window.location.href='https://drive.google.com/file/d/1kRNNe4JkARbAjrDN_CK5Ep3owitfoc1s/view?usp=sharing'" style="display: none;">CLICK!!!!!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "roar";
+            const userAnswer = document.getElementById("answer").value.toLowerCase();
+            const resultText = document.getElementById("result");
+            const resultMessage = document.getElementById("result-text");
+            const resultVideo = document.getElementById("result-video");
+            const heading = document.getElementById("heading");
+            const button = document.querySelector(".Kembali-btn");
+            const audioContainer = document.getElementById("audio-container");
+            const resultImage1 = document.getElementById("result-image1");
+            const resultImage2 = document.getElementById("result-image2");
+            const resultImage3 = document.getElementById("result-image3");
+            const resultImage4 = document.getElementById("result-image4");
+            const roarSound = document.getElementById("roar-sound");
+            const audio = document.getElementById("audio");
+
+            if (userAnswer === correctAnswer) {
+                resultText.innerHTML = "NAH INI BARU NAGA ROARR!! 🎉";
+                resultText.style.color = "green";
+                resultText.style.background = "white";
+                resultText.style.fontFamily = "comic sans ms";
+                resultText.style.fontSize = "1.5em";
+
+                resultVideo.style.display = "block";
+                resultMessage.style.display = "block";
+                heading.style.display = "block";
+                button.style.display = "block";
+                audioContainer.style.display = "block";
+                resultImage1.style.display = "block";
+                resultImage2.style.display = "block";
+                resultImage3.style.display = "block";
+                resultImage4.style.display = "none";
+
+                // Mainkan suara ROAR
+                roarSound.play();
+
+                // Mainkan musik ulang tahun
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Auto play gagal:", error);
+                    });
+                }
+            } else {
+                resultText.innerHTML = "AH PAYAH MASA SALAH, GA BAKAL GUE TRAKTIR LAGI NIIH!!! ❌";
+                resultText.style.color = "red";
+                resultText.style.background = "white";
+                resultText.style.fontFamily = "comic sans ms";
+                 resultText.style.fontSize = "1.5em";
+
+                resultVideo.style.display = "none";
+                resultMessage.style.display = "none";
+                heading.style.display = "none";
+                button.style.display = "none";
+                audioContainer.style.display = "none";
+                resultImage1.style.display = "none";
+                resultImage2.style.display = "none";
+                resultImage3.style.display = "none";
+                resultImage4.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9e3e3;
+    font-family: "Comic Sans MS", sans-serif;
+    flex-direction: column;
+    background-image: url('https://s.widget-club.com/images/YyiR86zpwIMIfrCZoSs4ulVD9RF3/e6f8e777b5fc774279483825d77e3e9f/7c12da4b9084c4d9539b1d636352683d.jpg?q=70&w=500');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #f9e3e3;
+    text-align: center;
+    background-color: rgba(94, 91, 86, 0.4); /* Menggunakan RGBA dengan transparansi */
+    border-radius: 10%;
+    width: 90%;  /* Menggunakan persen untuk lebar */
+    height: 80vh; /* Menggunakan vh (viewport height) untuk tinggi */
+  }
+  
+  @media (max-width: 1000px) {
+    .container {
+      width: 95%;  /* Lebar container akan semakin besar pada layar kecil */
+      height: 70vh; /* Menyesuaikan tinggi untuk layar kecil */
+    }
+  }
+  
+  h1 {
+    font-size: 50px;
+    color: #ffffff;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .yes-button {
+    font-size: 1.5em;
+    padding: 12px 28px;
+    margin-right: 12px;
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .yes-button::after {
+    content: "😎 ";
+  }
+  
+  .yes-button:hover {
+    background: linear-gradient(135deg, #43a047, #66bb6a);
+    transform: scale(1.05);
+  }
+  
+  
+  .no-button {
+    font-size: 1.5em;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #f44336, #e57373);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .no-button::after {
+    content: " ";
+  }
+  
+  .no-button:hover {
+    background: linear-gradient(135deg, #e53935, #ef5350);
+    transform: scale(1.05);
+  }
+  
+  
+  .gif_container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
